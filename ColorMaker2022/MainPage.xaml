@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ColorMaker2022.MainPage"
+             Title="Color Maker 2022" 
+             >
+    <Grid x:Name="Container" BackgroundColor="Black">
+        <Frame Margin="10,10,10,10" VerticalOptions="Center" MinimumHeightRequest="300" MinimumWidthRequest="400" Opacity=".8">
+            <Grid VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    Grid.ColumnSpan="2"
+                    HorizontalTextAlignment="Center"
+                    Text="Color Maker" />
+                <Label Text="Red" Grid.Row="1" />
+                <Label Text="0" Grid.Row="1" Grid.Column="1" x:Name="lblRed" HorizontalTextAlignment="End" />
+                <Slider
+                    x:Name="sldRed"
+                    MaximumTrackColor="{StaticResource Secondary}"
+                    MinimumTrackColor="Red"
+                    ThumbColor="{StaticResource Primary}"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="2"
+                    ValueChanged="sld_ValueChanged" />
+                <Label Text="Green" Grid.Row="3" />
+                <Label Text="0" Grid.Row="3" Grid.Column="1" x:Name="lblGreen" HorizontalTextAlignment="End" />
+                <Slider
+                    x:Name="sldGreen"
+                    MaximumTrackColor="{StaticResource Secondary}"
+                    MinimumTrackColor="Green"
+                    ThumbColor="{StaticResource Primary}"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="4"
+                    ValueChanged="sld_ValueChanged" />
+                <Label Text="Blue" Grid.Row="5" />
+                <Label Text="0" Grid.Row="5" Grid.Column="1" x:Name="lblBlue" HorizontalTextAlignment="End" />
+                <Slider
+                    x:Name="sldBlue"
+                    MaximumTrackColor="{StaticResource Secondary}"
+                    MinimumTrackColor="Blue"
+                    ThumbColor="{StaticResource Primary}"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="6"
+                    ValueChanged="sld_ValueChanged" />
+                <Frame CornerRadius="25" HorizontalOptions="Center" Grid.Row="7" Grid.ColumnSpan="2">
+                    <HorizontalStackLayout>
+                        <Label
+                            x:Name="lblHex"
+                            HorizontalTextAlignment="End"
+                            Text="HEX Value: #000000"
+                            VerticalOptions="Center" />
+                        <ImageButton
+                            Margin="10,0,0,0"
+                            HeightRequest="25"
+                            Source="copy.png"
+                            VerticalOptions="Center"
+                            WidthRequest="25" 
+                            Clicked="ImageButton_Clicked"/>
+                    </HorizontalStackLayout>
+                </Frame>
+            </Grid>
+        </Frame>
+    </Grid>
+</ContentPage>
